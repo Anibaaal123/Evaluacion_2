@@ -8,58 +8,66 @@
 </head>
 <body>
 
-    <div class="container">
-        <h1>Registro Interno de Colaboradores</h1>
+    <div class="app-layout">
         
-        <form id="colaboradorForm" novalidate>
-            <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre">
-                <div class="error-message" id="errorNombre"></div>
-            </div>
+        <div class="card-box">
+            <h2>Registro de Colaboradores</h2>
+            <form id="colaboradorForm" novalidate>
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+                    <div class="error-message" id="errorNombre"></div>
+                </div>
 
-            <div class="form-group">
-                <label for="apellido">Apellido</label>
-                <input type="text" id="apellido" name="apellido">
-                <div class="error-message" id="errorApellido"></div>
-            </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido">
+                    <div class="error-message" id="errorApellido"></div>
+                </div>
 
-            <div class="form-group">
-                <label for="cargo">Cargo</label>
-                <input type="text" id="cargo" name="cargo">
-                <div class="error-message" id="errorCargo"></div>
-            </div>
+                <div class="form-group">
+                    <label for="cargo">Cargo:</label>
+                    <select id="cargo" name="cargo">
+                        <option value="">-- Seleccione un cargo --</option>
+                        <option value="Administrativo">Administrativo</option>
+                        <option value="Desarrollador">Desarrollador/a</option>
+                        <option value="Diseñador">Diseñador/a</option>
+                        <option value="Gerente">Gerente</option>
+                        <option value="Soporte Técnico">Soporte Técnico</option>
+                    </select>
+                    <div class="error-message" id="errorCargo"></div>
+                </div>
 
-            <div class="form-group">
-                <label for="correo">Correo Electrónico</label>
-                <input type="email" id="correo" name="correo" placeholder="usuario@empresa.cl">
-                <div class="error-message" id="errorCorreo"></div>
-            </div>
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico Corporativo:</label>
+                    <input type="email" id="correo" name="correo" placeholder="usuario@empresa.cl">
+                    <div class="error-message" id="errorCorreo"></div>
+                </div>
 
-            <button type="submit" class="btn-submit">Registrar</button>
-        </form>
-
-        <hr>
-
-        <h2>Listado de Colaboradores</h2>
-        <div class="search-group">
-            <input type="text" id="buscador" placeholder="Buscar por nombre o cargo">
+                <button type="submit" class="btn-submit">Registrar Colaborador</button>
+            </form>
         </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Nombre Completo</th>
-                    <th>Cargo</th>
-                    <th>Correo Electrónico</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody id="tablaColaboradores">
-                </tbody>
-        </table>
-    </div>
+        <div class="card-box list-wide">
+            <h2>Listado Activo</h2>
+            <div class="search-group">
+                <input type="text" id="buscador" placeholder="Buscar por nombre o cargo en tiempo real...">
+            </div>
 
-    <script src="script.js"></script>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre Completo</th>
+                        <th>Cargo</th>
+                        <th>Correo Electrónico</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaColaboradores">
+                    </tbody>
+            </table>
+        </div>
+
+    </div> <script src="script.js"></script>
 </body>
 </html>
