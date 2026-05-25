@@ -1,13 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gestión de Colaboradores</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1> Registro </h1>
-    
-    
+
+    <div class="container">
+        <h1>Registro Interno de Colaboradores</h1>
+        
+        <form id="colaboradorForm" novalidate>
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre">
+                <div class="error-message" id="errorNombre"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido">
+                <div class="error-message" id="errorApellido"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="cargo">Cargo</label>
+                <input type="text" id="cargo" name="cargo">
+                <div class="error-message" id="errorCargo"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" id="correo" name="correo" placeholder="usuario@empresa.cl">
+                <div class="error-message" id="errorCorreo"></div>
+            </div>
+
+            <button type="submit" class="btn-submit">Registrar</button>
+        </form>
+
+        <hr>
+
+        <h2>Listado de Colaboradores</h2>
+        <div class="search-group">
+            <input type="text" id="buscador" placeholder="Buscar por nombre o cargo">
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre Completo</th>
+                    <th>Cargo</th>
+                    <th>Correo Electrónico</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tablaColaboradores">
+                </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
