@@ -104,20 +104,34 @@ button {
     background-color: #cc0000;
 }
 
-/* GESTIÓN DE ERRORES Y BUSCADOR*/
+/*GESTIÓN DE ERRORES Y BUSCADOR (Modificado para filtros alineados)*/
 .error-message {
     color: var(--accent-color);
     font-size: 14px;
     margin-top: 5px;
-    min-height: 18px; 
+    min-height: 18px;
 }
 
 .search-group {
+    display: flex;
+    gap: 10px; /* Espacio de separación entre el selector de filtro y el input */
     margin-bottom: 20px;
 }
 
+/* El selector de filtro ocupará un espacio fijo más pequeño */
+.search-group select {
+    flex: 3;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: #f8f9fa;
+}
+
+/* La barra de búsqueda ocupará el resto del espacio disponible */
 .search-group input {
-    width: 100%;
+    flex: 7;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;

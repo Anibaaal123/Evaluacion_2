@@ -49,10 +49,15 @@
         </div>
 
         <div class="card-box list-wide">
-            <h2>Listado Activo</h2>
-            <div class="search-group">
-                <input type="text" id="buscador" placeholder="Buscar por nombre o cargo en tiempo real...">
-            </div>
+        <h2>Listado Activo</h2>
+        <div class="search-group">
+            <select id="filtroCriterio">
+                <option value="todos">Buscar en Todos los campos</option>
+                <option value="nombre">Buscar solo por Nombre/Apellido</option>
+                <option value="cargo">Buscar solo por Cargo</option>
+            </select>
+        <input type="text" id="buscador" placeholder="Escribe para buscar en tiempo real...">
+        </div>
 
             <table>
                 <thead>
