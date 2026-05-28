@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="main-header">
+        <h1>Pagina de Gestión de Colaboradores</h1>
+    </header>
 
     <div class="app-layout">
         
         <div class="card-box">
-            <h2>Registro de Colaboradores</h2>
+            <h2>Registro</h2>
             <form id="colaboradorForm" novalidate>
                 <div class="form-group">
                     <label for="nombre">Nombre:</label>
@@ -53,10 +56,10 @@
         <div class="search-group">
             <select id="filtroCriterio">
                 <option value="todos">Buscar en Todos los campos</option>
-                <option value="nombre">Buscar solo por Nombre/Apellido</option>
+                <option value="nombre">Buscar solo por Nombre</option>
                 <option value="cargo">Buscar solo por Cargo</option>
             </select>
-        <input type="text" id="buscador" placeholder="Escribe para buscar en tiempo real...">
+        <input type="text" id="buscador" placeholder="Escribe para buscar segun filtro seleccionado...">
         </div>
 
             <table>

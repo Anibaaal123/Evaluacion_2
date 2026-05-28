@@ -99,7 +99,7 @@ function procesarFormulario() {
     
     if (esValido) {
         const nuevoColaborador = {
-            id: Date.now(), // ID único basado en milisegundos para poder borrarlo después
+            id: Date.now(), 
             nombre: nombreVal.trim(),
             apellido: apellidoVal.trim(),
             cargo: cargoVal,
@@ -185,32 +185,38 @@ function filtrarColaboradores(terminoBusqueda) {
     const terminoClean = terminoBusqueda.toLowerCase().trim();
     const criterio = filtroCriterio.value; 
 
-    if (terminoClean === '') {
-        renderizarTabla(colaboradores);
-        return;
-    }
-
-    
     const colaboradoresFiltrados = colaboradores.filter(colaborador => {
-        const nombreCompleto = `${colaborador.nombre} ${colaborador.apellido}`.toLowerCase();
+        
+        const nombre = colaborador.nombre.toLowerCase();
+        const apellido = colaborador.apellido.toLowerCase();
         const cargo = colaborador.cargo.toLowerCase();
 
         
         if (criterio === 'nombre') {
-            return nombreCompleto.includes(terminoClean);
-        } else if (criterio === 'cargo') {
-            return cargo.includes(terminoClean);
-        } else {
-            return nombreCompleto.includes(terminoClean) || cargo.includes(terminoClean);
+            return nombre.startsWith(terminoClean) || apellido.startsWith(terminoClean);
+        } 
+        
+        if (criterio === 'cargo') {
+            return cargo.startsWith(terminoClean);
+        } 
+        
+        if (criterio === 'todos') {
+            return nombre.startsWith(terminoClean) || 
+                   apellido.startsWith(terminoClean) || 
+                   cargo.startsWith(terminoClean);
         }
+
+        
+        return false; 
     });
 
+    
     renderizarTabla(colaboradoresFiltrados);
 }
 
 
 
-/*REQUERIMIENTO 4: ELIMINAR COLABORADOR*/
+/*ELIMINAR COLABORADOR*/
 
 /**
  * Remueve un colaborador del arreglo global utilizando su identificador único.

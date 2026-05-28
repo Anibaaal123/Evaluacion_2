@@ -1,9 +1,9 @@
  :root {
     --primary-color: #000000;
     --accent-color: #ff4136;
-    --bg-color: #1463da;
-    --card-bg: #ffffff;
-    --text-color: #020202;
+    --bg-color: #2550dd;
+    --card-bg: #eeeeeeea;
+    --text-color: #0c0b0b;
 }
 
 body {
@@ -43,7 +43,9 @@ h2 {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); 
     border: 1px solid #e1e4e8;
-    flex: 4;                   
+    flex: 4; 
+    margin: 10px;       
+    margin-top: 90px;           
 }
 
 .list-wide {
@@ -167,4 +169,23 @@ tr:hover {
     color: #777;
     font-style: italic;
     padding: 20px;
+}
+
+.main-header {
+    width: 100%;
+    max-width: 1300px;         
+    background-color: var(--card-bg); 
+    padding: 15px 30px;
+    border-radius: 8px;        
+    border: 1px solid #e1e4e8;
+    margin-bottom: 20px;       
+    box-sizing: border-box;
+}
+
+
+.main-header h1 {
+    color: var(--primary-color); 
+    margin: 0;
+    font-size: 24px;
+    text-align: center;          
 }
